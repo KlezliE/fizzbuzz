@@ -1,17 +1,20 @@
 # Név
 name: Első Pipeine
 
-# Mikor induljon el
+# Mikor induljon
 on:
   pull_request
 
 # Fázisok
 jobs:
   elso:
-    name: Első fázis
+    name: első fázis
     runs-on: ubuntu-latest
 
     steps:
+      - name: Egy soros parancs
+        run: echo "Sziasztok! Én egy feladat vagyok egy pipeline-on belül"
+
       - name: Kód letöltés
         uses: actions/checkout@v4
 
