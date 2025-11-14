@@ -1,34 +1,28 @@
 # Név
 name: Első Pipeine
 
-# Mikor induljon
+# Mikor induljon el
 on:
   pull_request
 
 # Fázisok
 jobs:
   elso:
-    name: első fázis
+    name: Első fázis
     runs-on: ubuntu-latest
 
     steps:
       - name: Kód letöltés
-        run: actions/checkout@v4
-        
-      - name: Egy soros parancs
-        run: echo "Sziasztok! Én egy feladat vagyok egy pipeline-on belül"
-        
+        uses: actions/checkout@v4
+
       - name: Python 3.x
         uses: actions/setup-python@v5
         with:
           python.version: "3.12"
-
+      
       - name: Python verzió ellenőrzés
         run: python --version
-
-      - name: Python verzió ellenőrzés
-        run: python --version
-        
+      
       - name: Kód futtatás
         run: python main.py
         working-directory: .app
