@@ -28,4 +28,4 @@ jobs:
       
       - name: Kód futtatás
         run: python main.py
-        working-directory: .app
+        working-directory: app
